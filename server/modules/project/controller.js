@@ -18,4 +18,13 @@ const create= async(req,res)=>{
         res.status(404).send(err)
     }
 }
-module.exports={getAll,create}
+const getOneProject = async (req, res) => {
+    try {
+        const {id}=req.params
+      const result = await Project.findByPk(id);
+      res.status(200).json(result);
+    } catch (error) {
+      res.status(404).send(error);
+    }
+  };
+module.exports={getAll,create,getOneProject}

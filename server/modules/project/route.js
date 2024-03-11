@@ -4,5 +4,8 @@ router.route("/")
 .get(projectController.getAll)
 .post(projectController.create)
 
+router.route('/:id')
+.get(projectController.getOneProject)
+
 
 module.exports = router;

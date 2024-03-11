@@ -23,6 +23,15 @@ function App() {
         console.log(err);
       });
   };
+  const createproject=(name,description)=>{
+    axios.post("http://localhost:3000/api/project",{
+      name:name,description:description
+    }).then(()=>{
+      setDummy(!dummy)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
 
   return (
     <div>
