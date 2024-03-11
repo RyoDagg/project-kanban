@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "fullName": "John Doe",
+    "username": "john_doe",
+    "password": "securepassword123",
+    "profession": "Software Engineer",
+    "email": "john.doe@example.com",
+    "photo": "https://example.com/john_doe_photo.jpg"
+  },
+  {
+    "id": 2,
+    "fullName": "Jane Smith",
+    "username": "jane_smith",
+    "password": "strongpass456",
+    "profession": "Graphic Designer",
+    "email": "jane.smith@example.com",
+    "photo": "https://example.com/jane_smith_photo.jpg"
+  }
+]

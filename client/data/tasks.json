@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Task 1",
+      "description": "Implement user authentication",
+      "state": "Todo",
+      "projectId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Task 2",
+      "description": "Create homepage layout",
+      "state": "Doing",
+      "projectId": 2,
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "Task 3",
+      "description": "Write API documentation",
+      "state": "Done",
+      "projectId": 1,
+      "userId": 1
+    }
+  ]
