@@ -9,4 +9,13 @@ const getAll= async (req,res)=>{
 res.status(404).send(err)
     }
 }
-module.exports={getAll}
+const create= async(req,res)=>{
+    try{
+        const result=await Project.create(req.body)
+        res.status(201).json(result)
+    }
+    catch(err){
+        res.status(404).send(err)
+    }
+}
+module.exports={getAll,create}
