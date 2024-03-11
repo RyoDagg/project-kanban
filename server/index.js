@@ -1,4 +1,5 @@
 const express = require("express");
+const sequelize = require("./database/index");
 const cors = require("cors");
 const PORT = 3000;
 const app = express();
