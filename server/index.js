@@ -5,9 +5,14 @@ const User = require("./modules/user/model");
 const verifyToken = require("./middelwares/verifyToken.js");
 const PORT = 3000;
 const app = express();
+const projectRouter=require("./modules/project/route.js")
+
 
 app.use(express.json());
 app.use(cors());
+
+app.use("/api/project",projectRouter);
+
 
 app.get("/api/user/mydata", verifyToken, async (req, res) => {
   try {
