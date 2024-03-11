@@ -16,5 +16,23 @@
     "profession": "Graphic Designer",
     "email": "jane.smith@example.com",
     "photo": "https://example.com/jane_smith_photo.jpg"
+  },
+  {
+    "id": 3,
+    "fullName": "Alex Johnson",
+    "username": "alex_j",
+    "password": "pass123",
+    "profession": "Project Manager",
+    "email": "alex.johnson@example.com",
+    "photo": "https://example.com/alex_j_photo.jpg"
+  },
+  {
+    "id": 4,
+    "fullName": "Eva Williams",
+    "username": "eva_w",
+    "password": "eva_pass",
+    "profession": "UX/UI Designer",
+    "email": "eva.williams@example.com",
+    "photo": "https://example.com/eva_w_photo.jpg"
   }
 ]

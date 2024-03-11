@@ -1,13 +1,17 @@
 [
   {
-    "name": "Project A",
-    "description": "Developing a new application",
+    "name": "Project X",
+    "description": "Building an e-commerce platform",
     "ownerId": 1
   },
   {
-    "name": "Project B",
-    "description": "Designing a company website",
+    "name": "Project Y",
+    "description": "Launching a mobile app",
+    "ownerId": 3
+  },
+  {
+    "name": "Project Z",
+    "description": "Redesigning company branding",
     "ownerId": 2
   }
 ]
-

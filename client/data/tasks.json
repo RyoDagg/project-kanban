@@ -1,26 +1,74 @@
 [
-    {
-      "id": 1,
-      "name": "Task 1",
-      "description": "Implement user authentication",
-      "state": "Todo",
-      "projectId": 1,
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "name": "Task 2",
-      "description": "Create homepage layout",
-      "state": "Doing",
-      "projectId": 2,
-      "userId": 2
-    },
-    {
-      "id": 3,
-      "name": "Task 3",
-      "description": "Write API documentation",
-      "state": "Done",
-      "projectId": 1,
-      "userId": 1
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Feature Development",
+    "description": "Implement shopping cart functionality",
+    "state": "Todo",
+    "projectId": 1,
+    "userId": 1
+  },
+  {
+    "id": 2,
+    "name": "Mobile App Design",
+    "description": "Create wireframes for the mobile app",
+    "state": "Doing",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 3,
+    "name": "Brand Identity",
+    "description": "Design new company logo and branding materials",
+    "state": "Done",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 4,
+    "name": "Payment Integration",
+    "description": "Integrate secure payment options",
+    "state": "Todo",
+    "projectId": 1,
+    "userId": 1
+  },
+  {
+    "id": 5,
+    "name": "User Testing",
+    "description": "Conduct user testing sessions for the mobile app",
+    "state": "Doing",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 6,
+    "name": "Website Redesign",
+    "description": "Redesign company website for a modern look",
+    "state": "Todo",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 7,
+    "name": "Backend Development",
+    "description": "Set up server and database for e-commerce platform",
+    "state": "Doing",
+    "projectId": 1,
+    "userId": 1
+  },
+  {
+    "id": 8,
+    "name": "Quality Assurance",
+    "description": "Perform thorough QA testing for the mobile app",
+    "state": "Todo",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 9,
+    "name": "Social Media Campaign",
+    "description": "Plan and execute a social media campaign for brand relaunch",
+    "state": "Done",
+    "projectId": 3,
+    "userId": 2
+  }
+]
