@@ -11,7 +11,7 @@ const TaskSlot = ({ data, title, handleDrop, role }) => {
             </h1>
 
             <div
-                className="bg-[#efefef] overflow-y-scroll rounded h-[400px]"
+                className="bg-[#efefef] overflow-y-scroll pb-3 rounded min-h-[250px] max-h-[500px]"
             >
                 {data.map((task, i) => (
                     <TaskCard key={i} task={task} />

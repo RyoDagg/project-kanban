@@ -42,7 +42,7 @@ const Kanban = () => {
     };
 
     return (
-        <div className="grid grid-cols-3 divide-x">
+        <div className="grid grid-cols-3">
             {kanbanSlots.map((slot) => <TaskSlot key={slot.id} handleDrop={handleDrop} {...slot} />)}
         </div>
     );
