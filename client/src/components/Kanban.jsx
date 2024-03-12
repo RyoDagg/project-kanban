@@ -1,16 +1,35 @@
-import { useState } from 'react'
-import tasksData from '../../data/tasks.json'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import TaskCard from './TaskCard'
 
 const Kanban = () => {
-    +
-    const [todo, setTodo] = useState(tasksData.filter(task => task.state === 'Todo'))
-    const [doing, setDoing] = useState(tasksData.filter(task => task.state === 'Doing'))
-    const [done, setDone] = useState(tasksData.filter(task => task.state === 'Done'))
 
-    const handleDrop = (event, state) => {
+    const [tasks, setTasks] = useState([])
+    const [todo, setTodo] = useState([])
+    const [doing, setDoing] = useState([])
+    const [done, setDone] = useState([])
+
+    useEffect(() => {
+        fetchTasks()
+    }, [])
+
+    useEffect(() => {
+        setTodo(tasks.filter(task => task.state === 'Todo'))
+        setDoing(tasks.filter(task => task.state === 'Doing'))
+        setDone(tasks.filter(task => task.state === 'Done'))
+    }, [tasks])
+
+    const fetchTasks = async () => {
+        const { data } = await axios('http://127.0.0.1:3000/api/task');
+        setTasks(data)
+    }
+
+    const handleDrop = async (event, state) => {
         event.preventDefault()
         const id = event.dataTransfer.getData('id')
+        console.log(id, state);
+        await axios.put('http://127.0.0.1:3000/api/task/' + id, { state });
+        fetchTasks()
     }
 
     return (
