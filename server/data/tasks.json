@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "User Authentication Module",
+    "description": "Implement secure user authentication",
+    "state": "Todo",
+    "projectId": 1,
+    "userId": 1
+  },
+  {
+    "id": 2,
+    "name": "Mobile App Wireframes",
+    "description": "Create wireframes for the mobile app",
+    "state": "Doing",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 3,
+    "name": "Website Redesign Concepts",
+    "description": "Develop concepts for the website redesign",
+    "state": "Done",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 4,
+    "name": "AI Feature Planning",
+    "description": "Plan the integration of AI features",
+    "state": "Todo",
+    "projectId": 4,
+    "userId": 5
+  },
+  {
+    "id": 5,
+    "name": "Social Media Strategy",
+    "description": "Create a comprehensive social media strategy",
+    "state": "Doing",
+    "projectId": 5,
+    "userId": 6
+  },
+  {
+    "id": 6,
+    "name": "Backend API Development",
+    "description": "Develop APIs for the backend functionality",
+    "state": "Todo",
+    "projectId": 1,
+    "userId": 7
+  },
+  {
+    "id": 7,
+    "name": "Mobile App UI Design",
+    "description": "Design the user interface for the mobile app",
+    "state": "Doing",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 8,
+    "name": "Content Creation",
+    "description": "Create engaging content for the website",
+    "state": "Todo",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 9,
+    "name": "AI Algorithm Implementation",
+    "description": "Implement AI algorithms in the application",
+    "state": "Done",
+    "projectId": 4,
+    "userId": 5
+  },
+  {
+    "id": 10,
+    "name": "Social Media Content Creation",
+    "description": "Create content for the social media campaign",
+    "state": "Doing",
+    "projectId": 5,
+    "userId": 6
+  },
+  {
+    "id": 11,
+    "name": "Database Setup",
+    "description": "Set up databases for the collaboration platform",
+    "state": "Todo",
+    "projectId": 1,
+    "userId": 7
+  },
+  {
+    "id": 12,
+    "name": "Mobile App Development",
+    "description": "Develop the mobile app based on wireframes",
+    "state": "Done",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 13,
+    "name": "Website Frontend Implementation",
+    "description": "Implement the redesigned website frontend",
+    "state": "Todo",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 14,
+    "name": "AI Testing",
+    "description": "Conduct testing for the implemented AI features",
+    "state": "Doing",
+    "projectId": 4,
+    "userId": 5
+  },
+  {
+    "id": 15,
+    "name": "Social Media Engagement",
+    "description": "Engage with the audience on social media platforms",
+    "state": "Todo",
+    "projectId": 5,
+    "userId": 6
+  },
+  {
+    "id": 16,
+    "name": "Collaboration Features Implementation",
+    "description": "Implement collaboration features in the platform",
+    "state": "Done",
+    "projectId": 1,
+    "userId": 7
+  },
+  {
+    "id": 17,
+    "name": "Mobile App Testing",
+    "description": "Conduct thorough testing for the mobile app",
+    "state": "Todo",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 18,
+    "name": "Website Backend Development",
+    "description": "Develop backend functionality for the redesigned website",
+    "state": "Doing",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 19,
+    "name": "AI Optimization",
+    "description": "Optimize AI algorithms for better performance",
+    "state": "Todo",
+    "projectId": 4,
+    "userId": 5
+  },
+  {
+    "id": 20,
+    "name": "Social Media Analytics",
+    "description": "Analyze social media campaign performance",
+    "state": "Done",
+    "projectId": 5,
+    "userId": 6
+  },
+  {
+    "id": 21,
+    "name": "Collaboration Platform UI Design",
+    "description": "Design the user interface for the collaboration platform",
+    "state": "Todo",
+    "projectId": 1,
+    "userId": 7
+  },
+  {
+    "id": 22,
+    "name": "Mobile App Deployment",
+    "description": "Deploy the mobile app to app stores",
+    "state": "Done",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 23,
+    "name": "Website Testing",
+    "description": "Conduct testing for the redesigned website",
+    "state": "Todo",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 24,
+    "name": "AI Documentation",
+    "description": "Document AI algorithms and their usage",
+    "state": "Doing",
+    "projectId": 4,
+    "userId": 5
+  },
+  {
+    "id": 25,
+    "name": "Social Media Reporting",
+    "description": "Generate reports on social media campaign performance",
+    "state": "Todo",
+    "projectId": 5,
+    "userId": 6
+  },
+  {
+    "id": 26,
+    "name": "Collaboration Platform Development",
+    "description": "Develop the collaboration platform based on designs",
+    "state": "Done",
+    "projectId": 1,
+    "userId": 7
+  },
+  {
+    "id": 27,
+    "name": "Mobile App Maintenance",
+    "description": "Perform regular maintenance for the mobile app",
+    "state": "Todo",
+    "projectId": 2,
+    "userId": 4
+  },
+  {
+    "id": 28,
+    "name": "Website Deployment",
+    "description": "Deploy the redesigned website to production",
+    "state": "Doing",
+    "projectId": 3,
+    "userId": 2
+  },
+  {
+    "id": 29,
+    "name": "AI Feature Expansion",
+    "description": "Expand AI features based on user feedback",
+    "state": "Todo",
+    "projectId": 4,
+    "userId": 5
+  },
+  {
+    "id": 30,
+    "name": "Social Media Strategy Adjustment",
+    "description": "Adjust social media strategy based on analytics",
+    "state": "Done",
+    "projectId": 5,
+    "userId": 6
+  }
+]
