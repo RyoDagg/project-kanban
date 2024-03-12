@@ -2,7 +2,6 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const cors = require("cors");
-const session = require("express-session");
 
 const User = require("./modules/user/model");
 const verifyToken = require("./middelwares/verifyToken.js");
@@ -17,11 +16,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(
-  session({
-    secret: "serrek fi bir",
-  })
-);
 
 app.use("/api/project", projectRouter);
 app.use("/api/task", taskRouter);
@@ -52,7 +46,6 @@ app.post("/api/auth/signin", async (req, res) => {
         allowInsecureKeySizes: true,
         expiresIn: 86400, // 24 hours
       });
-      req.session.token = token;
       res.send(token);
     } else {
       res.send("Invalid password");
@@ -78,10 +71,6 @@ app.post("/api/auth/signup", async (req, res) => {
 
 app.post("/api/auth/signout", signOutList, async (req, res) => {
   try {
-    // console.log(req.session);
-    // return;
-    // req.session.destroy();
-    req.session = null;
     res.status(200).send({
       message: "You've been signed out!",
     });
