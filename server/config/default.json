@@ -1,7 +1,7 @@
 {
-    "database":"yourdatabase",
-    "username":"database username",
-    "password":"password",
+    "database":"kanban",
+    "username":"root",
+    "password":"root",
     "host":"localhost",
-    "direct":"mysql"
+    "dialect":"mysql"
 }
