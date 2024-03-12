@@ -5,6 +5,7 @@ import Project from "./components/project/Project.jsx";
 import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
+import Kanban from "./components/Kanban.jsx";
 function App() {
   const [projects, setProjects] = useState([]);
   const [dummy, setDummy] = useState(false);
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProjectsList projects={projects} />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/mytasks" element={<Kanban />} />
         </Routes>
       </div>
     </>
