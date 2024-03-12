@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import TaskSlot from "./TaskSlot";
+import SideBar from "../SideBar.jsx";
 
 const Kanban = () => {
     const [tasks, setTasks] = useState([]);
@@ -42,8 +43,13 @@ const Kanban = () => {
     };
 
     return (
-        <div className="grid grid-cols-3">
-            {kanbanSlots.map((slot) => <TaskSlot key={slot.id} handleDrop={handleDrop} {...slot} />)}
+        <div className="flex">
+            <SideBar />
+            <div className="mx-5 my-5 border-4 p-5">
+                <div className="grid grid-cols-3">
+                    {kanbanSlots.map((slot) => <TaskSlot key={slot.id} handleDrop={handleDrop} {...slot} />)}
+                </div>
+            </div>
         </div>
     );
 };
