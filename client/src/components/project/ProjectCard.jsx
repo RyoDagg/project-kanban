@@ -5,7 +5,7 @@ const ProjectCard = ({ project }) => {
 
     return (
         <div
-            className="w-[250px] shadow hover:bg-slate-200 cursor-pointer duration-200"
+            className="w-[250px] m-[10px] rounded shadow hover:bg-slate-200 cursor-pointer duration-200"
             onClick={() => {
                 navigateTo("/project", { state: { project } });
             }}

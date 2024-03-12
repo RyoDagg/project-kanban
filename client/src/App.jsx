@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="mx-5 my-5 p-5">
+      <div className="mx-5 my-5 border-8 p-5">
         <Routes>
           <Route path="/" element={<ProjectsList projects={projects} />} />
           <Route path="/project" element={<Project />} />
