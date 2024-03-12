@@ -4,6 +4,7 @@ import Project from "./components/Project.jsx";
 // import projectsData from "../data/projects.json";
 import ProjectsList from "./components/ProjectsList.jsx";
 import axios from "axios";
+import Navbar from "./components/Navbar.jsx";
 function App() {
   const [projects, setProjects] = useState([]);
   const [dummy, setDummy] = useState(false);
@@ -23,23 +24,26 @@ function App() {
         console.log(err);
       });
   };
-  const createproject=(name,description)=>{
-    axios.post("http://localhost:3000/api/project",{
-      name:name,description:description
-    }).then(()=>{
+  const createproject = (name, description) => {
+    axios.post("http://localhost:3000/api/project", {
+      name: name, description: description
+    }).then(() => {
       setDummy(!dummy)
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err)
     })
   }
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<ProjectsList projects={projects} />} />
-        <Route path="/project" element={<Project />} />
-      </Routes>
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <Routes>
+          <Route path="/" element={<ProjectsList projects={projects} />} />
+          <Route path="/project" element={<Project />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
