@@ -1,7 +1,6 @@
 import ProjectCard from "./ProjectCard.jsx";
+
 const ProjectsList = ({ projects }) => {
-
-
 
   return (
     <div className="flex gap-4 justify-around flex-wrap">
