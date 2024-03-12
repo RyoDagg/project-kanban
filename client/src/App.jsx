@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Project from "./components/Project.jsx";
+import Project from "./components/project/Project.jsx";
 // import projectsData from "../data/projects.json";
-import ProjectsList from "./components/ProjectsList.jsx";
+import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
 function App() {
@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="mx-5 my-5 p-5">
         <Routes>
           <Route path="/" element={<ProjectsList projects={projects} />} />
           <Route path="/project" element={<Project />} />
