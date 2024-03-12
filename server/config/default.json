@@ -1,0 +1,7 @@
+{
+    "database":"kanban",
+    "username":"root",
+    "password":"root",
+    "host":"localhost",
+    "dialect":"mysql"
+}
