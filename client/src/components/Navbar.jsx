@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
-
     // navigation items
     const navItems = [
         { id: 1, text: 'Home', link: '/' },
