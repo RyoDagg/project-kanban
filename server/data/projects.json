@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Project Alpha",
+    "description": "Developing a cutting-edge web application",
+    "ownerId": 1
+  },
+  {
+    "name": "Project Beta",
+    "description": "Designing an interactive mobile app",
+    "ownerId": 3
+  },
+  {
+    "name": "Project Gamma",
+    "description": "Creating a brand identity for a startup",
+    "ownerId": 2
+  },
+  {
+    "name": "Project Delta",
+    "description": "Building a scalable e-commerce platform",
+    "ownerId": 4
+  },
+  {
+    "name": "Project Epsilon",
+    "description": "Launching a social impact initiative",
+    "ownerId": 5
+  }
+]
