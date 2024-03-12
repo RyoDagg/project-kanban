@@ -3,8 +3,12 @@ const TaskCard = ({ task }) => {
         <div
             onDragStart={event => event.dataTransfer.setData("id", task.id)}
             draggable
-            className="bg-yellow-100 rounded-md p-2 m-5">
-            <h1 className="text-[25px]">{task.name}</h1>
+            className="bg-white rounded-md border-2 p-3 m-3">
+            <h1
+                className="text-[20px] font-[500]"
+            >
+                {task.name}
+            </h1>
             <p>{task.description}</p>
         </div>
     )
