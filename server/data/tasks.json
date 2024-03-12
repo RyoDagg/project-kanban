@@ -238,5 +238,165 @@
     "state": "Done",
     "projectId": 5,
     "userId": 6
+  },
+  {
+    "id": 31,
+    "name": "Kanban Board Implementation",
+    "description": "Implement a Kanban board for project management",
+    "state": "Todo",
+    "projectId": 6,
+    "userId": 5
+  },
+  {
+    "id": 32,
+    "name": "Gantt Chart Integration",
+    "description": "Integrate Gantt charts for project scheduling",
+    "state": "Doing",
+    "projectId": 6,
+    "userId": 6
+  },
+  {
+    "id": 33,
+    "name": "User Authentication for Kanban Manager",
+    "description": "Implement secure user authentication for Kanban Manager",
+    "state": "Todo",
+    "projectId": 6,
+    "userId": 7
+  },
+  {
+    "id": 34,
+    "name": "RBK Project Planning",
+    "description": "Plan the final project for RBK web developer student",
+    "state": "Done",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 35,
+    "name": "Kanban Manager UI Design",
+    "description": "Design the user interface for Kanban Manager",
+    "state": "Todo",
+    "projectId": 6,
+    "userId": 5
+  },
+  {
+    "id": 36,
+    "name": "RBK Team Formation",
+    "description": "Form a team for the RBK final project",
+    "state": "Doing",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 37,
+    "name": "Kanban Board Testing",
+    "description": "Conduct testing for the Kanban board functionality",
+    "state": "Todo",
+    "projectId": 6,
+    "userId": 7
+  },
+  {
+    "id": 38,
+    "name": "RBK Project Scope Definition",
+    "description": "Define the scope of the RBK final project",
+    "state": "Done",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 39,
+    "name": "Kanban Manager Deployment",
+    "description": "Deploy Kanban Manager to production",
+    "state": "Todo",
+    "projectId": 6,
+    "userId": 5
+  },
+  {
+    "id": 40,
+    "name": "RBK Task Assignment",
+    "description": "Assign tasks to team members for the RBK project",
+    "state": "Doing",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 41,
+    "name": "Kanban Manager User Documentation",
+    "description": "Create user documentation for Kanban Manager",
+    "state": "Todo",
+    "projectId": 6,
+    "userId": 7
+  },
+  {
+    "id": 42,
+    "name": "RBK Coding Phase",
+    "description": "Start coding phase for the RBK project",
+    "state": "Done",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 43,
+    "name": "Kanban Manager Feature Expansion",
+    "description": "Expand features based on user feedback",
+    "state": "Doing",
+    "projectId": 6,
+    "userId": 5
+  },
+  {
+    "id": 44,
+    "name": "RBK Code Review",
+    "description": "Conduct code review for the RBK project",
+    "state": "Todo",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 45,
+    "name": "Kanban Manager Bug Fixing",
+    "description": "Fix bugs reported by users in Kanban Manager",
+    "state": "Done",
+    "projectId": 6,
+    "userId": 7
+  },
+  {
+    "id": 46,
+    "name": "RBK Testing Phase",
+    "description": "Conduct testing for the RBK project",
+    "state": "Todo",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 47,
+    "name": "Kanban Manager Analytics Integration",
+    "description": "Integrate analytics for Kanban Manager",
+    "state": "Doing",
+    "projectId": 6,
+    "userId": 5
+  },
+  {
+    "id": 48,
+    "name": "RBK Final Documentation",
+    "description": "Create final documentation for the RBK project",
+    "state": "Todo",
+    "projectId": 7,
+    "userId": 6
+  },
+  {
+    "id": 49,
+    "name": "Kanban Manager Reporting",
+    "description": "Generate reports on Kanban Manager usage",
+    "state": "Done",
+    "projectId": 6,
+    "userId": 7
+  },
+  {
+    "id": 50,
+    "name": "RBK Project Deployment",
+    "description": "Deploy the RBK project to production",
+    "state": "Doing",
+    "projectId": 7,
+    "userId": 6
   }
 ]
