@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
 
 
@@ -7,6 +9,7 @@ const Navbar = () => {
         { id: 2, text: 'Projects', link: '/projects' },
         { id: 3, text: 'My Tasks', link: '/mytasks' },
     ];
+    const navigateTo = useNavigate();
 
     return (
         <div className='bg-black flex justify-start items-center h-[70px] mx-0 px-4 text-white'>
@@ -16,8 +19,9 @@ const Navbar = () => {
             <ul className='flex'>
                 {navItems.map(item => (
                     <li
+                        onClick={() => navigateTo(item.link)}
                         key={item.id}
-                        className='p-4 hover:bg-[#E3E31C] font-[450] rounded-sm m-2 cursor-pointer duration-300 hover:text-black'
+                        className='p-3 px-4 hover:bg-[#E3E31C] font-[450] rounded-sm m-2 mx-3 cursor-pointer duration-300 hover:text-[#0C062D]'
                     >
                         {item.text}
                     </li>
