@@ -5,12 +5,15 @@ import Project from "./components/project/Project.jsx";
 import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
+import Kanban from "./components/Kanban.jsx";
 function App() {
   const [projects, setProjects] = useState([]);
+  const [tasks,setTasks]=useState([])
   const [dummy, setDummy] = useState(false);
 
   useEffect(() => {
     fetchAllProjects();
+  
   }, [dummy]);
 
   const fetchAllProjects = () => {
@@ -33,6 +36,7 @@ function App() {
       console.log(err)
     })
   }
+ 
 
   return (
     <>
@@ -40,7 +44,8 @@ function App() {
       <div className="mx-5 my-5 border-8 p-5">
         <Routes>
           <Route path="/" element={<ProjectsList projects={projects} />} />
-          <Route path="/project" element={<Project />} />
+          <Route path="/project" element={<Kanban />} />
+          <Route path="/mytasks" element={<Kanban />} />
         </Routes>
       </div>
     </>
