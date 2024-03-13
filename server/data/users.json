@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "fullName": "John Doe",
+    "username": "john_doe",
+    "password": "securepassword123",
+    "profession": "Software Engineer",
+    "email": "john.doe@example.com",
+    "photo": "https://example.com/john_doe_photo.jpg"
+  },
+  {
+    "id": 2,
+    "fullName": "Jane Smith",
+    "username": "jane_smith",
+    "password": "strongpass456",
+    "profession": "Graphic Designer",
+    "email": "jane.smith@example.com",
+    "photo": "https://example.com/jane_smith_photo.jpg"
+  },
+  {
+    "id": 3,
+    "fullName": "Alex Johnson",
+    "username": "alex_j",
+    "password": "pass123",
+    "profession": "Project Manager",
+    "email": "alex.johnson@example.com",
+    "photo": "https://example.com/alex_j_photo.jpg"
+  },
+  {
+    "id": 4,
+    "fullName": "Eva Williams",
+    "username": "eva_w",
+    "password": "eva_pass",
+    "profession": "UX/UI Designer",
+    "email": "eva.williams@example.com",
+    "photo": "https://example.com/eva_w_photo.jpg"
+  },
+  {
+    "id": 5,
+    "fullName": "Michael Brown",
+    "username": "michael_b",
+    "password": "mike_pass",
+    "profession": "Frontend Developer",
+    "email": "michael.brown@example.com",
+    "photo": "https://example.com/michael_b_photo.jpg"
+  },
+  {
+    "id": 6,
+    "fullName": "Sara Wilson",
+    "username": "sara_w",
+    "password": "sara_pass",
+    "profession": "Marketing Specialist",
+    "email": "sara.wilson@example.com",
+    "photo": "https://example.com/sara_w_photo.jpg"
+  },
+  {
+    "id": 7,
+    "fullName": "David Taylor",
+    "username": "david_t",
+    "password": "taylor_pass",
+    "profession": "Backend Developer",
+    "email": "david.taylor@example.com",
+    "photo": "https://example.com/david_t_photo.jpg"
+  }
+]
