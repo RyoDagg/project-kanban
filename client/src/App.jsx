@@ -4,6 +4,8 @@ import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
 import Kanban from "./components/tasks/Kanban.jsx";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
 function App() {
   const [projects, setProjects] = useState([]);
   const [dummy, setDummy] = useState(false);

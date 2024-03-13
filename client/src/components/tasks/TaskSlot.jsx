@@ -1,7 +1,9 @@
 import { useState } from "react";
 import TaskCard from "./TaskCard"
+import { InputModal } from "./InputModal.jsx";
 
-const TaskSlot = ({ data, title, handleDrop, role, }) => {
+
+const TaskSlot = ({ data, title, handleDrop, role, addTask, }) => {
     const [dragOver, setDragOver] = useState(false);
 
     return (
@@ -29,7 +31,15 @@ const TaskSlot = ({ data, title, handleDrop, role, }) => {
                 {data.map((task, i) => (
                     <TaskCard key={i} task={task} />
                 ))}
+
             </div>
+            <InputModal addTask={addTask} role={role} />
+            <button
+                data-bs-toggle="modal"
+                data-bs-target={'#' + role + "Modal"}
+                className="btn btn-success"
+            // onClick={() => { addTask }}
+            >Add Task</button>
         </div>
     )
 }

@@ -43,12 +43,30 @@ const Kanban = () => {
         fetchTasks();
     };
 
+    const addTask = async (title, description, state) => {
+        try {
+            console.log(title, description, state, project.id)
+            const result = await axios.post("http://127.0.0.1:3000/api/task", {
+                name: title,
+                description,
+                state,
+                projectId: project.id,
+                userId: 1
+            })
+            console.log(result)
+            fetchTasks()
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     return (
         <div className="flex">
             <SideBar />
             <div className="mx-5 my-5 border-4 p-5">
                 <div className="grid grid-cols-3">
-                    {kanbanSlots.map((slot) => <TaskSlot key={slot.id} handleDrop={handleDrop} {...slot} />)}
+                    {kanbanSlots.map((slot) => <TaskSlot key={slot.id} addTask={addTask} handleDrop={handleDrop} {...slot} />)}
                 </div>
             </div>
         </div>
