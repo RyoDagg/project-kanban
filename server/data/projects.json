@@ -23,5 +23,15 @@
     "name": "Project Epsilon",
     "description": "Launching a social impact initiative",
     "ownerId": 5
+  },
+  {
+    "name": "Kanban Manager",
+    "description": "Building a website to manage projects using Kanban, Gantt charts, and more.",
+    "ownerId": 5
+  },
+  {
+    "name": "RBK Final Project",
+    "description": "Managing the final project for a web developer student at RBK school.",
+    "ownerId": 6
   }
 ]
