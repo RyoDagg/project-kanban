@@ -9,6 +9,7 @@ const Kanban = () => {
     const [todo, setTodo] = useState([]);
     const [doing, setDoing] = useState([]);
     const [done, setDone] = useState([]);
+
     const { state } = useLocation();
     const { project } = state;
 
