@@ -7,7 +7,7 @@ signOutList = (req, res, next) => {
 
 verifySession = (req, res, next) => {
   if (blackList.includes(req.headers["x-token"])) {
-    res.status(405).send("rak makech connecté");
+    res.status(405).send("You Are Signed Out");
   } else {
     next();
   }

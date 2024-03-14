@@ -1,13 +1,40 @@
 import ProjectCard from "./ProjectCard.jsx";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Addproject from "./Addproject.jsx";
 import Delete from "./Delete.jsx";
-const ProjectsList = ({ projects }) => {
+import { useNavigate } from "react-router-dom";
+const ProjectsList = ({ user }) => {
 
-  const [refresh, setRefresh] = useState(false);
+  const [projects, setProjects] = useState([]);
   const [project, setProject] = useState(null);
+
+  useEffect(() => {
+    fetchAllProjects();
+
+  }, []);
+
+  const navigateTo = useNavigate()
+
+  const fetchAllProjects = () => {
+
+    if (user) {
+
+      axios
+        .get(`http://localhost:3000/api/user/${user.id}/projects`)
+        .then((response) => {
+          setProjects([...response.data, ...response.data, ...response.data, ...response.data]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    else {
+      navigateTo('/login')
+    }
+  };
+
 
   const createproject = (name, description) => {
     console.log(name, description);
@@ -15,19 +42,19 @@ const ProjectsList = ({ projects }) => {
       .post("http://localhost:3000/api/project", {
         name,
         description,
-        ownerId: 1,
+        userId: user.id,
       })
-      .then(() => {});
-    setRefresh(!refresh).catch((err) => {
-      console.log(err);
-    });
+      .then(() => { fetchAllProjects() })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const deleteProject = (id) => {
     axios
       .delete(`http://localhost:3000/api/project/${id}`)
       .then(() => {
-        setRefresh(!refresh);
+        fetchAllProjects()
       })
       .catch((err) => {
         console.log(err);
