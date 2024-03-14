@@ -33,7 +33,7 @@ const EditProject = () => {
           setName(event.target.value);
         }}
       />
-      <input
+      <textarea
         type="text"
         placeholder="description"
         value={desc}

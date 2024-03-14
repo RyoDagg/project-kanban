@@ -29,6 +29,8 @@ const signin = async (req, res) => {
 };
 
 const singnup = async (req, res) => {
+  console.log(req.body)
+  return 
   try {
     const user = await User.create({
       fullName: req.body.fullName,
