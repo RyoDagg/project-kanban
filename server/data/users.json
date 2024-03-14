@@ -34,5 +34,32 @@
     "profession": "UX/UI Designer",
     "email": "eva.williams@example.com",
     "photo": "https://example.com/eva_w_photo.jpg"
+  },
+  {
+    "id": 5,
+    "fullName": "Michael Brown",
+    "username": "michael_b",
+    "password": "mike_pass",
+    "profession": "Frontend Developer",
+    "email": "michael.brown@example.com",
+    "photo": "https://example.com/michael_b_photo.jpg"
+  },
+  {
+    "id": 6,
+    "fullName": "Sara Wilson",
+    "username": "sara_w",
+    "password": "sara_pass",
+    "profession": "Marketing Specialist",
+    "email": "sara.wilson@example.com",
+    "photo": "https://example.com/sara_w_photo.jpg"
+  },
+  {
+    "id": 7,
+    "fullName": "David Taylor",
+    "username": "david_t",
+    "password": "taylor_pass",
+    "profession": "Backend Developer",
+    "email": "david.taylor@example.com",
+    "photo": "https://example.com/david_t_photo.jpg"
   }
 ]

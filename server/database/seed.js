@@ -3,9 +3,9 @@ const User = require("../modules/user/model");
 const Project = require("../modules/project/model");
 const Task = require("../modules/task/model");
 
-const users = require("../../client/data/users.json");
-const projects = require("../../client/data/projects.json");
-const tasks = require("../../client/data/tasks.json");
+const users = require("../data/users.json");
+const projects = require("../data/projects.json");
+const tasks = require("../data/tasks.json");
 
 (async () => {
   await (async () => {

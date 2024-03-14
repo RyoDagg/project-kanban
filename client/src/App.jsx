@@ -1,32 +1,31 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Project from "./components/project/Project.jsx";
-// import projectsData from "../data/projects.json";
 import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
-import Kanban from "./components/Kanban.jsx";
+import Kanban from "./components/tasks/Kanban.jsx";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
 function App() {
   const [projects, setProjects] = useState([]);
-  const [tasks,setTasks]=useState([])
   const [dummy, setDummy] = useState(false);
 
   useEffect(() => {
     fetchAllProjects();
-  
+
   }, [dummy]);
 
   const fetchAllProjects = () => {
     axios
       .get("http://localhost:3000/api/project")
       .then((response) => {
-        console.log(response.data);
         setProjects(response.data);
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
   const createproject = (name, description) => {
     axios.post("http://localhost:3000/api/project", {
       name: name, description: description
@@ -36,18 +35,15 @@ function App() {
       console.log(err)
     })
   }
- 
+
 
   return (
     <>
       <Navbar />
-      <div className="mx-5 my-5 border-8 p-5">
-        <Routes>
-          <Route path="/" element={<ProjectsList projects={projects} />} />
-          <Route path="/project" element={<Kanban />} />
-          <Route path="/mytasks" element={<Kanban />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<ProjectsList projects={projects} />} />
+        <Route path="/project" element={<Kanban />} />
+      </Routes>
     </>
   );
 }

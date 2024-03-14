@@ -8,6 +8,8 @@ const verifyToken = require("./middelwares/verifyToken.js");
 const projectRouter = require("./modules/project/route.js");
 const taskRouter = require("./modules/task/route.js");
 
+const { signOutList, verifySession } = require("./middelwares/blackList.js");
+
 const PORT = 3000;
 
 const app = express();
@@ -18,7 +20,7 @@ app.use(cors());
 app.use("/api/project", projectRouter);
 app.use("/api/task", taskRouter);
 
-app.get("/api/user/mydata", verifyToken, async (req, res) => {
+app.get("/api/user/mydata", verifySession, verifyToken, async (req, res) => {
   try {
     const user = await User.findByPk(req.userId);
     res.send(user);
@@ -62,6 +64,16 @@ app.post("/api/auth/signup", async (req, res) => {
       password: bcrypt.hashSync(req.body.password, 8),
     });
     res.send({ message: "User registered successfully!" });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+});
+
+app.post("/api/auth/signout", signOutList, async (req, res) => {
+  try {
+    res.status(200).send({
+      message: "You've been signed out!",
+    });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
