@@ -45,7 +45,7 @@ function App() {
       const { data, status } = await axios.post('http://127.0.0.1:3000/api/auth/signin', { username, password })
       if (status == 200) {
         localStorage.setItem('x-token', data)
-        navigateTo('/')
+        getUser(data)
       }
 
     } catch (error) {
@@ -74,8 +74,8 @@ function App() {
         <Route path="/login" element={<Login login={login} />} />
         <Route path="/signup" element={<SignUp signUp={signUp} />} />
         <Route path="/" element={<ProjectsList user={user} />} />
-        <Route path="/project" element={<Kanban />} />
       </Routes>
+
     </>
   );
 }
