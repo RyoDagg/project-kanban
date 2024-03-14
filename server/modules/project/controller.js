@@ -1,6 +1,7 @@
 const express = require("express");
 const Project = require("./model");
 const Task = require("../task/model");
+
 const getAll = async (req, res) => {
   try {
     const result = await Project.findAll();
@@ -11,7 +12,9 @@ const getAll = async (req, res) => {
 };
 const create = async (req, res) => {
   try {
-    const result = await Project.create(req.body);
+    const { name, description } = req.body;
+    const { userId } = req;
+    const result = await Project.create({ name, description, userId });
     res.status(201).json(result);
   } catch (err) {
     res.status(404).send(err);
@@ -36,15 +39,29 @@ const getAllTasks = async (req, res) => {
     res.status(404).send(err);
   }
 };
-const deleteProject = async (req,res)=>{
-  try{
+const deleteProject = async (req, res) => {
+  try {
     const { id } = req.params;
     console.log(id);
-    const result =await Project.destroy({where:{id:id}})
-    res.json(result)
+    const result = await Project.destroy({ where: { id: id } });
+    res.json(result);
+  } catch (err) {
+    res.send(err);
   }
-  catch(err){
-    res.send(err)
+};
+const update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await Project.update(
+      {
+        name: req.body.name,
+        description: req.body.description,
+      },
+      { where: { id: id } }
+    );
+    res.json(result);
+  } catch (err) {
+    res.status(404).send(err);
   }
-}
-module.exports = { getAll, create, getOneProject, getAllTasks,deleteProject };
+};
+module.exports = { getAll, create, getOneProject, getAllTasks, deleteProject ,update};

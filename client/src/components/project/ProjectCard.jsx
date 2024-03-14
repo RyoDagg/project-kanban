@@ -11,7 +11,7 @@ const ProjectCard = ({ setProject, project }) => {
             <div
                 className="p-4 hover:bg-slate-200"
                 onClick={() => {
-                    navigateTo("/project", { state: { project } });
+                    navigateTo("/project", { state: { project} });
                 }}
             >
                 <div
@@ -37,6 +37,12 @@ const ProjectCard = ({ setProject, project }) => {
                         setProject(project)
                     }}
                 >🍄
+                </button>
+                <button className="btn btn-success" data-bs-toggle="modal" 
+                  onClick={() => {
+                    navigateTo("/edit", { state: { project} });
+                }}
+                >🔧
                 </button>
             </div>
         </div >
