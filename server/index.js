@@ -1,50 +1,31 @@
 const express = require("express");
-const sequelize = require("./database/index");
-const jwt = require("jsonwebtoken");
 const cors = require("cors");
+
 const User = require("./modules/user/model");
-const verifyToken = require('./middelwares/verifyToken.js')
+const verifyToken = require("./middelwares/verifyToken.js");
+const projectRouter = require("./modules/project/route.js");
+const taskRouter = require("./modules/task/route.js");
+const userRouter = require("./modules/user/route.js");
+
+const { verifySession } = require("./middelwares/blackList.js");
+
 const PORT = 3000;
+
 const app = express();
 
-
 app.use(express.json());
-app.use (express.urlencoded({extended :true}))
 app.use(cors());
 
-app.get("/api/user/mydata", verifyToken , async (req, res) => {
+app.use("/api/project", projectRouter);
+app.use("/api/task", taskRouter);
+app.use("/api", userRouter);
 
-  res.status(201).send (req.userId)
-
-})
-
-app.post("/api/auth/signin", async (req, res) => {
-  
+app.get("/api/user/mydata", verifySession, verifyToken, async (req, res) => {
   try {
-    const {username,password}=req.body
-   const user = await User.findOne({
-      where: {
-       username,
-      },
-    });
-
-    if(user.password === password){
-      const token = jwt.sign({ id: user.id },
-       "ourSecret",
-        {
-          algorithm: 'HS256',
-          allowInsecureKeySizes: true,
-          expiresIn: 86400, // 24 hours
-        });
-       res.send(token)
-    }
-    else {
-      res.send("Invalid password")
-    }
-    
-
+    const user = await User.findByPk(req.userId);
+    res.send(user);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(404).send("error fetching user");
   }
 });
 

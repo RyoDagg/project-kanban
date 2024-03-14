@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
-
-const sequelize = new Sequelize("kanban", "root", "oumeima123", {
-  host: "localhost",
-  dialect: "mysql",
+const {database,password,host,username,dialect}=require("config")
+const sequelize = new Sequelize(database, username, password, {
+  host,
+  dialect,
 });
 
 sequelize
