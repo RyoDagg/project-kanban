@@ -43,12 +43,12 @@ const ProjectsList = ({ user }) => {
       .post("http://localhost:3000/api/project", {
         name,
         description,
-        ownerId: 1,
+        userId: user.id,
       })
-      .then(() => { });
-    setRefresh(!refresh).catch((err) => {
-      console.log(err);
-    });
+      .then(() => { fetchAllProjects() })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const deleteProject = (id) => {

@@ -4,8 +4,8 @@ import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
 import Kanban from "./components/tasks/Kanban.jsx";
-import Login from "./components/Login.jsx";
-import SignUp from "./components/SignUp.jsx";
+import Login from "./components/auth/Login.jsx";
+import SignUp from "./components/auth/SignUp.jsx";
 function App() {
 
   const [user, setUser] = useState(null)
@@ -74,6 +74,8 @@ function App() {
         <Route path="/login" element={<Login login={login} />} />
         <Route path="/signup" element={<SignUp signUp={signUp} />} />
         <Route path="/" element={<ProjectsList user={user} />} />
+        <Route path="/project" element={<Kanban />} />
+
       </Routes>
 
     </>
