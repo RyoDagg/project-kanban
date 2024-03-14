@@ -7,7 +7,6 @@ import Delete from "./Delete.jsx";
 import { useNavigate } from "react-router-dom";
 const ProjectsList = ({ user }) => {
 
-  const [refresh, setRefresh] = useState(false);
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState(null);
 
@@ -25,7 +24,7 @@ const ProjectsList = ({ user }) => {
       axios
         .get(`http://localhost:3000/api/user/${user.id}/projects`)
         .then((response) => {
-          setProjects(response.data);
+          setProjects([...response.data, ...response.data, ...response.data, ...response.data]);
         })
         .catch((err) => {
           console.log(err);
@@ -55,7 +54,7 @@ const ProjectsList = ({ user }) => {
     axios
       .delete(`http://localhost:3000/api/project/${id}`)
       .then(() => {
-        setRefresh(!refresh);
+        fetchAllProjects()
       })
       .catch((err) => {
         console.log(err);
