@@ -3,7 +3,7 @@ import TaskCard from "./TaskCard"
 import { InputModal } from "./InputModal.jsx";
 
 
-const TaskSlot = ({ data, title, handleDrop, role, addTask, }) => {
+const TaskSlot = ({ data, title, handleDrop, role, addTask,fetchTasks,  }) => {
     const [dragOver, setDragOver] = useState(false);
 
     return (
@@ -29,7 +29,7 @@ const TaskSlot = ({ data, title, handleDrop, role, addTask, }) => {
                 className={`${dragOver ? "bg-[#d0d0d0]" : "bg-[#efefef]"} overflow-y-scroll pb-3 rounded min-h-[250px] max-h-[500px]`}
             >
                 {data.map((task, i) => (
-                    <TaskCard key={i} task={task} />
+                    <TaskCard key={i} task={task} fetchTasks={fetchTasks} />
                 ))}
 
             </div>

@@ -1,4 +1,15 @@
-const TaskCard = ({ task }) => {
+import axios from "axios"
+const TaskCard = ({ task, fetchTasks }) => {
+
+    const deleteTask = async (id) => {
+        try {
+            await axios.delete("http://127.0.0.1:3000/api/task/" + id)
+            fetchTasks()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div
             onDragStart={event => event.dataTransfer.setData("id", task.id)}
@@ -8,6 +19,7 @@ const TaskCard = ({ task }) => {
                 {task.name}
             </h1>
             <p>{task.description}</p>
+            <button type="button" className="btn btn-outline-danger" onClick={() => { deleteTask(task.id) }} >❌</button>
         </div>
     )
 }
