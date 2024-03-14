@@ -59,12 +59,11 @@ function App() {
 
   const signUp = async (username, password, email, fullName, image) => {
     try {
-      const formValues={username, password, email, fullName, image}
+      const formValues = { username, password, email, fullName, image }
       const formData = new FormData();
-     for(const key in formValues){
-      formData.append(key,formValues[key])
-     }
-      console.log(formData.entries());
+      for (const key in formValues) {
+        formData.append(key, formValues[key])
+      }
 
       const { status } = await axios.post(
         "http://127.0.0.1:3000/api/auth/signup",
