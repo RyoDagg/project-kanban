@@ -21,7 +21,7 @@ const signin = async (req, res) => {
       });
       res.send(token);
     } else {
-      res.send("Invalid password");
+      res.status(401).send("Invalid password");
     }
   } catch (error) {
     res.status(500).json(error);
@@ -52,4 +52,15 @@ const signout = async (req, res) => {
   }
 };
 
-module.exports = { signin, singnup, signout };
+const userProjects = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findByPk(id);
+    const projects = await user.getProjects();
+    res.json(projects);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
+module.exports = { signin, singnup, signout, userProjects };
