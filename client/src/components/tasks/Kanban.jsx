@@ -58,7 +58,6 @@ const Kanban = () => {
         } catch (error) {
             console.log(error)
         }
-
     }
 
     return (
@@ -66,7 +65,7 @@ const Kanban = () => {
             <SideBar />
             <div className="mx-5 my-5 border-4 p-5">
                 <div className="grid grid-cols-3">
-                    {kanbanSlots.map((slot) => <TaskSlot key={slot.id} addTask={addTask} handleDrop={handleDrop} {...slot} />)}
+                    {kanbanSlots.map((slot) => <TaskSlot key={slot.id} addTask={addTask} fetchTasks={fetchTasks}  handleDrop={handleDrop} {...slot} />)}
                 </div>
             </div>
         </div>
