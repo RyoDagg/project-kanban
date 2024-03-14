@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Addproject from "./Addproject.jsx";
 import Delete from "./Delete.jsx";
-import { useNavigate } from "react-router-dom";
 const ProjectsList = ({ user }) => {
 
   const [projects, setProjects] = useState([]);
@@ -15,12 +14,10 @@ const ProjectsList = ({ user }) => {
 
   }, []);
 
-  const navigateTo = useNavigate()
 
   const fetchAllProjects = () => {
 
     if (user) {
-
       axios
         .get(`http://localhost:3000/api/user/${user.id}/projects`)
         .then((response) => {
@@ -29,9 +26,6 @@ const ProjectsList = ({ user }) => {
         .catch((err) => {
           console.log(err);
         });
-    }
-    else {
-      navigateTo('/login')
     }
   };
 
