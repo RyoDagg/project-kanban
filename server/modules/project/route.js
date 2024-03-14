@@ -6,6 +6,7 @@ router.route("/")
 
 router.route('/:id')
 .get(projectController.getOneProject)
+.delete(projectController.deleteProject)
 
 router.route('/:id/tasks')
 .get(projectController.getAllTasks)

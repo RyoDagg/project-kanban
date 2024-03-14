@@ -36,4 +36,15 @@ const getAllTasks = async (req, res) => {
     res.status(404).send(err);
   }
 };
-module.exports = { getAll, create, getOneProject, getAllTasks };
+const deleteProject = async (req,res)=>{
+  try{
+    const { id } = req.params;
+    console.log(id);
+    const result =await Project.destroy({where:{id:id}})
+    res.json(result)
+  }
+  catch(err){
+    res.send(err)
+  }
+}
+module.exports = { getAll, create, getOneProject, getAllTasks,deleteProject };
