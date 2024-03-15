@@ -34,13 +34,20 @@ const ProjectsList = () => {
 
 
   const createproject = (name, description) => {
+    const token = localStorage.getItem('x-token')
+
     console.log(name, description);
     axios
       .post("http://localhost:3000/api/project", {
         name,
         description,
-        userId: user.id,
-      })
+      },
+        {
+          headers: {
+
+            'x-token': token
+          }
+        })
       .then(() => { fetchAllProjects() })
       .catch((err) => {
         console.log(err);
