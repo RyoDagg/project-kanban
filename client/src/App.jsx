@@ -1,5 +1,6 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, createContext } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+
 import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
@@ -7,9 +8,15 @@ import Kanban from "./components/tasks/Kanban.jsx";
 import Login from "./components/auth/Login.jsx";
 import SignUp from "./components/auth/SignUp.jsx";
 import EditProject from "./components/project/EditProject.jsx";
+
+export const GlobalContext = createContext()
+
 function App() {
+
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
 
   const navigateTo = useNavigate();
 
@@ -82,18 +89,20 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/login" element={<Login login={login} />} />
-        <Route path="/signup" element={<SignUp signUp={signUp} />} />
-        <Route path="/" element={
-          !loading ?
-            <ProjectsList user={user} /> :
-            <h1>Loading</h1>
-        } />
-        <Route path="/project" element={<Kanban />} />
-        <Route path="/edit" element={<EditProject />} />
-      </Routes>
+      <GlobalContext.Provider value={user}>
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<Login login={login} />} />
+          <Route path="/signup" element={<SignUp signUp={signUp} />} />
+          <Route path="/" element={
+            !loading ?
+              <ProjectsList /> :
+              <h1>Loading</h1>
+          } />
+          <Route path="/project" element={<Kanban />} />
+          <Route path="/edit" element={<EditProject />} />
+        </Routes>
+      </GlobalContext.Provider>
     </>
   );
 }
