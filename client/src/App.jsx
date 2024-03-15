@@ -1,48 +1,92 @@
-import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
 import Navbar from "./components/Navbar.jsx";
 import Kanban from "./components/tasks/Kanban.jsx";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
+import Login from "./components/auth/Login.jsx";
+import SignUp from "./components/auth/SignUp.jsx";
+import EditProject from "./components/project/EditProject.jsx";
 function App() {
-  const [projects, setProjects] = useState([]);
-  const [dummy, setDummy] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const navigateTo = useNavigate();
 
   useEffect(() => {
-    fetchAllProjects();
+    const token = localStorage.getItem("x-token");
+    if (token) {
+      getUser(token);
+      navigateTo("/");
+    } else {
+      navigateTo("/login");
+    }
+  }, []);
 
-  }, [dummy]);
+  useEffect(() => {
+    if (user) {
+      navigateTo("/");
+    } else {
+      navigateTo("/login");
+    }
+  }, [user]);
 
-  const fetchAllProjects = () => {
+  const getUser = (token) => {
     axios
-      .get("http://localhost:3000/api/project")
-      .then((response) => {
-        setProjects(response.data);
+      .get("http://127.0.0.1:3000/api/user/mydata", {
+        headers: {
+          "x-token": token,
+        },
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((res) => setUser(res.data))
+      .catch((err) => console.error(err));
   };
 
-  const createproject = (name, description) => {
-    axios.post("http://localhost:3000/api/project", {
-      name: name, description: description
-    }).then(() => {
-      setDummy(!dummy)
-    }).catch((err) => {
-      console.log(err)
-    })
-  }
+  const login = async (username, password) => {
+    try {
+      const { data, status } = await axios.post(
+        "http://127.0.0.1:3000/api/auth/signin",
+        { username, password }
+      );
+      if (status == 200) {
+        localStorage.setItem("x-token", data);
+        getUser(data);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("makech mawjoud");
+    }
+  };
 
+  const signUp = async (username, password, email, fullName, image) => {
+    try {
+      const formValues = { username, password, email, fullName, image }
+      const formData = new FormData();
+      for (const key in formValues) {
+        formData.append(key, formValues[key])
+      }
+
+      const { status } = await axios.post(
+        "http://127.0.0.1:3000/api/auth/signup",
+        formData
+      );
+      if (status == 200) {
+        navigateTo("/login");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("famma error");
+    }
+  };
 
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<ProjectsList projects={projects} />} />
+        <Route path="/login" element={<Login login={login} />} />
+        <Route path="/signup" element={<SignUp signUp={signUp} />} />
+        <Route path="/" element={<ProjectsList user={user} />} />
         <Route path="/project" element={<Kanban />} />
+        <Route path="/edit" element={<EditProject />} />
       </Routes>
     </>
   );

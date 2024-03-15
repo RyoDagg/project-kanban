@@ -1,7 +1,7 @@
 const User = require("./model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-
+const path=require("path")
 const signin = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -21,7 +21,7 @@ const signin = async (req, res) => {
       });
       res.send(token);
     } else {
-      res.send("Invalid password");
+      res.status(401).send("Invalid password");
     }
   } catch (error) {
     res.status(500).json(error);
@@ -29,6 +29,11 @@ const signin = async (req, res) => {
 };
 
 const singnup = async (req, res) => {
+  const {image}=req.files
+  const imagePath = path.join(__dirname, "../../storage/users/images/");
+  await image.mv(imagePath + image.name); 
+  console.log(req.files)
+  return 
   try {
     const user = await User.create({
       fullName: req.body.fullName,
@@ -52,4 +57,15 @@ const signout = async (req, res) => {
   }
 };
 
-module.exports = { signin, singnup, signout };
+const userProjects = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findByPk(id);
+    const projects = await user.getProjects();
+    res.json(projects);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
+module.exports = { signin, singnup, signout, userProjects };

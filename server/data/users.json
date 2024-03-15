@@ -3,7 +3,7 @@
     "id": 1,
     "fullName": "John Doe",
     "username": "john_doe",
-    "password": "securepassword123",
+    "password": "$2b$08$M4ATacbxswi7WdlmfMoRR.Llqna8mU3Jl.CNU5G/Z34bHHBA0kmBa",
     "profession": "Software Engineer",
     "email": "john.doe@example.com",
     "photo": "https://example.com/john_doe_photo.jpg"
@@ -12,7 +12,7 @@
     "id": 2,
     "fullName": "Jane Smith",
     "username": "jane_smith",
-    "password": "strongpass456",
+    "password": "$2b$08$M4ATacbxswi7WdlmfMoRR.Llqna8mU3Jl.CNU5G/Z34bHHBA0kmBa",
     "profession": "Graphic Designer",
     "email": "jane.smith@example.com",
     "photo": "https://example.com/jane_smith_photo.jpg"
@@ -39,7 +39,7 @@
     "id": 5,
     "fullName": "Michael Brown",
     "username": "michael_b",
-    "password": "mike_pass",
+    "password": "$2b$08$M4ATacbxswi7WdlmfMoRR.Llqna8mU3Jl.CNU5G/Z34bHHBA0kmBa",
     "profession": "Frontend Developer",
     "email": "michael.brown@example.com",
     "photo": "https://example.com/michael_b_photo.jpg"
