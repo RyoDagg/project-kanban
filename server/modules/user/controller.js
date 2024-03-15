@@ -1,7 +1,8 @@
 const User = require("./model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const path=require("path")
+const path = require("path");
+const { use } = require("./route");
 const signin = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -29,20 +30,28 @@ const signin = async (req, res) => {
 };
 
 const singnup = async (req, res) => {
-  const {image}=req.files
-  const imagePath = path.join(__dirname, "../../storage/users/images/");
-  await image.mv(imagePath + image.name); 
-  console.log(req.files)
-  return 
+  const data = { ...req.body };
+  data.password = bcrypt.hashSync(req.body.password, 8);
+
+  if (req.files) {
+    const { image } = req.files;
+    const imagePath = path.join(__dirname, "../../storage/images/users/");
+    let imageName = Date.now();
+    const [, extension] = image.mimetype.split("/");
+    imageName += "." + extension;
+    await image.mv(imagePath + imageName);
+    data.photo = "images/users/" + imageName;
+  }
+
   try {
-    const user = await User.create({
-      fullName: req.body.fullName,
-      username: req.body.username,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 8),
-    });
+    console.log(data);
+    // return;
+
+    const user = await User.create(data);
+
     res.send({ message: "User registered successfully!" });
   } catch (error) {
+    console.log(error);
     res.status(500).send({ message: error.message });
   }
 };

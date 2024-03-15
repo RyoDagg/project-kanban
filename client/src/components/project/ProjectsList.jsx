@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Addproject from "./Addproject.jsx";
 import Delete from "./Delete.jsx";
-const ProjectsList = ({ user }) => {
+import { useContext } from "react";
+import { GlobalContext } from "../../App.jsx";
+const ProjectsList = () => {
 
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState(null);
@@ -14,6 +16,7 @@ const ProjectsList = ({ user }) => {
 
   }, []);
 
+  const user = useContext(GlobalContext)
 
   const fetchAllProjects = () => {
 
