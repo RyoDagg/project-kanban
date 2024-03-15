@@ -15,5 +15,7 @@ const Project = sequelize.define("project", {
 
 User.hasMany(Project);
 Project.belongsTo(User);
-
+Project.belongsToMany(User,{ through: 'userProject' });
+User.belongsToMany(Project,{ through: 'userProject' });
+ 
 module.exports = Project;
