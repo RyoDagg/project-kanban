@@ -1,7 +1,7 @@
 const User = require("./model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-
+const path=require("path")
 const signin = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -29,7 +29,10 @@ const signin = async (req, res) => {
 };
 
 const singnup = async (req, res) => {
-  console.log(req.body)
+  const {image}=req.files
+  const imagePath = path.join(__dirname, "../../storage/users/images/");
+  await image.mv(imagePath + image.name); 
+  console.log(req.files)
   return 
   try {
     const user = await User.create({
