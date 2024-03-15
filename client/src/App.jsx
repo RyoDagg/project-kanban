@@ -8,6 +8,7 @@ import Kanban from "./components/tasks/Kanban.jsx";
 import Login from "./components/auth/Login.jsx";
 import SignUp from "./components/auth/SignUp.jsx";
 import EditProject from "./components/project/EditProject.jsx";
+import Index from "./components/project/Index.jsx";
 
 export const GlobalContext = createContext()
 
@@ -99,12 +100,11 @@ function App() {
               <ProjectsList /> :
               <div className="flex justify-center mt-[100px]">
                 <div className="w-[200px]">
-                <img src="https://1b-f.s3.eu-west-1.amazonaws.com/a/9695-39637E35-BE2B-43F5-82FE-8B735F0B00A9-0-1474608235.gif" alt="" />
+                  <img src="https://1b-f.s3.eu-west-1.amazonaws.com/a/9695-39637E35-BE2B-43F5-82FE-8B735F0B00A9-0-1474608235.gif" alt="" />
                 </div>
               </div>
           } />
-          <Route path="/project" element={<Kanban />} />
-          <Route path="/edit" element={<EditProject />} />
+          <Route path="/project/*" element={<Index />} />
         </Routes>
       </GlobalContext.Provider>
     </>
