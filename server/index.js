@@ -6,6 +6,7 @@ const verifyToken = require("./middelwares/verifyToken.js");
 const projectRouter = require("./modules/project/route.js");
 const taskRouter = require("./modules/task/route.js");
 const userRouter = require("./modules/user/route.js");
+const fileupload = require("express-fileupload");
 
 const { verifySession } = require("./middelwares/blackList.js");
 
@@ -13,6 +14,7 @@ const PORT = 3000;
 
 const app = express();
 
+app.use(fileupload());
 app.use(express.json());
 app.use(cors());
 
