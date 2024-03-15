@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const path = require("path");
 const { Op } = require("sequelize");
+const Project = require("../project/model");
 
 const signin = async (req, res) => {
   try {
@@ -78,6 +79,17 @@ const userProjects = async (req, res) => {
   }
 };
 
+const userProjectsMemeber = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findByPk(id, { include: "Projects" });
+
+    res.json(user.Projects);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
 const search = async (req, res) => {
   try {
     const { query } = req.body;
@@ -95,4 +107,11 @@ const search = async (req, res) => {
   }
 };
 
-module.exports = { signin, singnup, signout, userProjects, search };
+module.exports = {
+  signin,
+  singnup,
+  signout,
+  userProjects,
+  search,
+  userProjectsMemeber,
+};
