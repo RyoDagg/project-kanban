@@ -6,7 +6,7 @@ const Navbar = () => {
     const navItems = [
         { id: 1, text: 'Home', link: '/' },
         { id: 2, text: 'Projects', link: '/projects' },
-        { id: 3, text: 'My Tasks', link: '/mytasks' },
+        { id: 3, text: 'My Stats', link: '/mytasks' },
     ];
     const navigateTo = useNavigate();
 
