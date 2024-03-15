@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const User = require("./modules/user/model");
 const verifyToken = require("./middelwares/verifyToken.js");
@@ -21,6 +22,8 @@ app.use(cors());
 app.use("/api/project", projectRouter);
 app.use("/api/task", taskRouter);
 app.use("/api", userRouter);
+
+app.use(express.static(path.join(__dirname, "/storage")));
 
 app.get("/api/user/mydata", verifySession, verifyToken, async (req, res) => {
   try {

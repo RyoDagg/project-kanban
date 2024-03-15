@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import ProjectsList from "./components/project/ProjectsList.jsx";
 import axios from "axios";
@@ -9,26 +9,28 @@ import SignUp from "./components/auth/SignUp.jsx";
 import EditProject from "./components/project/EditProject.jsx";
 function App() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const navigateTo = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const token = localStorage.getItem("x-token");
     if (token) {
       getUser(token);
-      navigateTo("/");
     } else {
       navigateTo("/login");
     }
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (user) {
       navigateTo("/");
+      setLoading(false)
     } else {
       navigateTo("/login");
     }
   }, [user]);
+
 
   const getUser = (token) => {
     axios
@@ -84,7 +86,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login login={login} />} />
         <Route path="/signup" element={<SignUp signUp={signUp} />} />
-        <Route path="/" element={<ProjectsList user={user} />} />
+        <Route path="/" element={
+          !loading ?
+            <ProjectsList user={user} /> :
+            <h1>Loading</h1>
+        } />
         <Route path="/project" element={<Kanban />} />
         <Route path="/edit" element={<EditProject />} />
       </Routes>
