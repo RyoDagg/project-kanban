@@ -14,24 +14,32 @@ const SideBar = () => {
             title: 'users',
             link: "/project/users"
         }
-
     ]
 
     return (
-        <div className="p-2 bg-[#120844]">
-            <div className="w-[280px] h-screen bg-[#060317]">
+        <div className="p-2 bg-[#060317] shadow">
+            <div className="w-[280px] h-screen pt-2">
                 <div
                     onClick={() => {
                         navigateTo("/project", { state: { project } });
                     }}
-                    className="border-[1px] rounded cursor-pointer border-[#909090]">
-                    <h1 className="text-[#E3E31C] text-center text-[25px] py-4">{project.name}</h1>
+                    className="border-[1px] rounded mx-3 cursor-pointer border-[#71710E] duration-300 hover:bg-[#171703]">
+                    <h1
+                        className="text-[#E3E31C] text-center font-[400] text-[25px] py-4 duration-100"
+                    >
+                        {project.name}
+                    </h1>
                 </div>
                 <ul className="p-3">
                     {navList.map((item, i) =>
                     (<li
                         key={i}
-                        className="text-[#d9d9d9] text-[18px] hover:bg-[#e3e31c4b] p-3 rounded cursor-pointer"
+                        className={
+                        `text-[#e3e31c] text-[20px]
+                        py-2 px-3 my-2 rounded cursor-pointer
+                        border-1 border-[#71710E] duration-300
+                        hover:translate-x-1 hover:bg-[#e3e31c] hover:text-[#0C062D]`
+                        }
                         onClick={() => {
                             navigateTo(item.link, { state: { project } });
                         }}
