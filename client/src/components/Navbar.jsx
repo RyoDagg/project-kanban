@@ -15,7 +15,6 @@ const Navbar = () => {
     const navigateTo = useNavigate();
 
     const user = useContext(GlobalContext)
-    console.log(user);
 
     return (
         <div className='bg-[#0C062D] flex justify-start shadow items-center h-[70px] mx-0 px-4 text-white'>
@@ -54,11 +53,11 @@ const Navbar = () => {
                 <div
                     className={`
                 absolute 
-                right-[0px] top-16  
-                w-[300px] h-36
-                bg-black
-                duration-100
-                ${hover ? '' : 'hidden'}
+                -right-6 top-16  
+                w-[250px] h-36
+                bg-[#a0a0a0] rounded
+                duration-200
+                ${hover ? '' : 'opacity-0'}
                 `}>
 
                 </div>
