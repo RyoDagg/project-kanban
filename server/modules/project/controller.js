@@ -64,4 +64,35 @@ const update = async (req, res) => {
     res.status(404).send(err);
   }
 };
-module.exports = { getAll, create, getOneProject, getAllTasks, deleteProject ,update};
+const addUser = async (req, res) => {
+  try {
+    const { userId, projectId } = req.body;
+    const project = await Project.findByPk(projectId);
+    project.addUser(userId);
+    res.send("mrigl");
+  } catch (error) {
+    res.send(404);
+  }
+};
+
+const getAllUsers = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const project = await Project.findByPk(id);
+    const users = await project.getUsers();
+    res.json(users);
+  } catch (err) {
+    res.status(404).send(err);
+  }
+};
+
+module.exports = {
+  getAll,
+  create,
+  getOneProject,
+  getAllTasks,
+  deleteProject,
+  update,
+  addUser,
+  getAllUsers,
+};

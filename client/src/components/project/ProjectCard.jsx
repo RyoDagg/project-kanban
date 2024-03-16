@@ -40,7 +40,7 @@ const ProjectCard = ({ setProject, project }) => {
                 </button>
                 <button className="btn btn-success" data-bs-toggle="modal" 
                   onClick={() => {
-                    navigateTo("/edit", { state: { project} });
+                    navigateTo("/project/edit", { state: { project} });
                 }}
                 >🔧
                 </button>
