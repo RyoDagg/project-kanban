@@ -6,7 +6,7 @@ const ProjectCard = ({ setProject, project }) => {
 
     return (
         <div
-            className="max-w-[450px] min-w-[400px] m-[10px] rounded shadow-sm border-2 divide-y-2 cursor-pointer duration-200"
+            className="m-[10px] rounded shadow-sm border-1 border-[#9F9F14] divide-y-2 cursor-pointer duration-200"
         >
             <div
                 className="p-4 hover:bg-slate-200"

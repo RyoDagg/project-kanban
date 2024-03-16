@@ -24,7 +24,7 @@ const ProjectsList = () => {
       axios
         .get(`http://localhost:3000/api/user/${user.id}/projects`)
         .then((response) => {
-          setProjects(response.data);
+          setProjects([...response.data, ...response.data, ...response.data]);
         })
         .catch((err) => {
           console.log(err);
@@ -78,7 +78,7 @@ const ProjectsList = () => {
     <>
       <Addproject create={createproject} />
       <Delete deleted={deleteProject} project={project} />
-      <div className="mx-5 my-5 divide-y border-4 p-5 pt-2">
+      <div className="mx-3 my-5 divide-y rounded border-1 border-[#120844] p-4 pt-2">
         <div className="flex justify-end px-3 py-2">
           <button
             data-bs-toggle="modal"
@@ -88,19 +88,21 @@ const ProjectsList = () => {
             Add Project
           </button >
         </div>
-        <div className="flex gap-4 justify-around flex-wrap">
-          {projects.map((project, key) => {
-            return (
-              <ProjectCard key={key} project={project} setProject={setProject} />
-            );
-          })}
-        </div>
-        <div className="flex gap-4 justify-around flex-wrap">
-          {projectsMember.map((project, key) => {
-            return (
-              <ProjectCard key={key} project={project} setProject={setProject} />
-            );
-          })}
+        <div className="">
+          <div className="grid border-1 rounded border-[#120844] gap-4 grid-cols-3 flex-wrap">
+            {projects.map((project, key) => {
+              return (
+                <ProjectCard key={key} project={project} setProject={setProject} />
+              );
+            })}
+          </div>
+          <div className="grid gap-4 grid-cols-3 flex-wrap">
+            {projectsMember.map((project, key) => {
+              return (
+                <ProjectCard key={key} project={project} setProject={setProject} />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
