@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const path = require("path");
 const { Op } = require("sequelize");
-const Project = require("../project/model");
 
 const signin = async (req, res) => {
   try {
@@ -46,11 +45,7 @@ const singnup = async (req, res) => {
   }
 
   try {
-    console.log(data);
-    // return;
-
-    const user = await User.create(data);
-
+    await User.create(data);
     res.send({ message: "User registered successfully!" });
   } catch (error) {
     console.log(error);
@@ -82,9 +77,9 @@ const userProjects = async (req, res) => {
 const userProjectsMemeber = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findByPk(id, { include: "Projects" });
-
-    res.json(user.Projects);
+    const user = await User.findByPk(id);
+    const projects = await user.getProjectsIn();
+    res.json(projects);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -107,6 +102,15 @@ const search = async (req, res) => {
   }
 };
 
+const myData = async (req, res) => {
+  try {
+    const user = await User.findByPk(req.userId);
+    res.send(user);
+  } catch (error) {
+    res.status(404).send("error fetching user");
+  }
+};
+
 module.exports = {
   signin,
   singnup,
@@ -114,4 +118,5 @@ module.exports = {
   userProjects,
   search,
   userProjectsMemeber,
+  myData,
 };
