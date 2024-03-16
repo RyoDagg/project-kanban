@@ -1,11 +1,10 @@
-import ProjectCard from "./ProjectCard.jsx";
-
-import { useEffect, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import axios from "axios";
+
+import ProjectCard from "./ProjectCard.jsx";
 import Addproject from "./Addproject.jsx";
 import Delete from "./Delete.jsx";
-import { useContext } from "react";
-import { GlobalContext } from "../../App.jsx";
+import { GlobalContext } from "../Home.jsx";
 const ProjectsList = () => {
 
   const [projects, setProjects] = useState([]);
@@ -76,32 +75,35 @@ const ProjectsList = () => {
   };
 
   return (
-    <div className="mx-5 my-5 divide-y border-4 p-5">
+    <>
       <Addproject create={createproject} />
       <Delete deleted={deleteProject} project={project} />
-      <div className="flex gap-4 justify-around flex-wrap">
-        {projects.map((project, key) => {
-          return (
-            <ProjectCard key={key} project={project} setProject={setProject} />
-          );
-        })}
+      <div className="mx-5 my-5 divide-y border-4 p-5 pt-2">
+        <div className="flex justify-end px-3 py-2">
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#Modal"
+            className="btn btn-lg btn-success"
+          >
+            Add Project
+          </button >
+        </div>
+        <div className="flex gap-4 justify-around flex-wrap">
+          {projects.map((project, key) => {
+            return (
+              <ProjectCard key={key} project={project} setProject={setProject} />
+            );
+          })}
+        </div>
+        <div className="flex gap-4 justify-around flex-wrap">
+          {projectsMember.map((project, key) => {
+            return (
+              <ProjectCard key={key} project={project} setProject={setProject} />
+            );
+          })}
+        </div>
       </div>
-      <div className="flex gap-4 justify-around flex-wrap">
-        {projectsMember.map((project, key) => {
-          return (
-            <ProjectCard key={key} project={project} setProject={setProject} />
-          );
-        })}
-      </div>
-
-      <button
-        data-bs-toggle="modal"
-        data-bs-target="#Modal"
-        className="btn btn-success"
-      >
-        Add Project
-      </button>
-    </div>
+    </>
   );
 };
 
