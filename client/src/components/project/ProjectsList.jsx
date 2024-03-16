@@ -24,7 +24,7 @@ const ProjectsList = () => {
       axios
         .get(`http://localhost:3000/api/user/${user.id}/projects`)
         .then((response) => {
-          setProjects([...response.data, ...response.data, ...response.data]);
+          setProjects([...response.data]);
         })
         .catch((err) => {
           console.log(err);
@@ -89,7 +89,7 @@ const ProjectsList = () => {
           </button >
         </div>
         <div className="">
-          <div className="grid border-1 rounded border-[#120844] gap-4 grid-cols-3 flex-wrap">
+          <div className="grid border-1 rounded border-[#120844] gap-4 grid-cols-3 p-3 flex-wrap">
             {projects.map((project, key) => {
               return (
                 <ProjectCard key={key} project={project} setProject={setProject} />

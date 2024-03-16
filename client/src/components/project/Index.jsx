@@ -10,7 +10,7 @@ const Index = () => {
         <>
             <div className="flex">
                 <SideBar />
-                <div className="mx-3 my-5 border-1 shadow-lg rounded w-full border-[#120844] p-3">
+                <div className="mx-3 my-4 border-1 shadow-lg rounded w-full border-[#120844] p-3">
                     <Routes>
                         <Route path="/" element={<Kanban />} />
                         <Route path="/edit" element={<EditProject />} />
