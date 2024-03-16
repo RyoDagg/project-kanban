@@ -32,15 +32,20 @@ const Home = () => {
   }, [user]);
 
 
-  const getUser = (token) => {
-    axios
-      .get("http://127.0.0.1:3000/api/user/mydata", {
-        headers: {
-          "x-token": token,
-        },
-      })
-      .then((res) => setUser(res.data))
-      .catch((err) => console.error(err));
+  const getUser = async (token) => {
+    try {
+      const { data } = await axios
+        .get("http://127.0.0.1:3000/api/user/mydata", {
+          headers: {
+            "x-token": token,
+          },
+        })
+      setUser(data)
+    } catch (error) {
+      localStorage.removeItem('x-token')
+      navigateTo('/login')
+      console.error(error)
+    }
   };
 
 
