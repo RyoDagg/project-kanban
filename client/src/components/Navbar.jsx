@@ -11,7 +11,7 @@ const Navbar = () => {
     const navigateTo = useNavigate();
 
     return (
-        <div className='bg-[#0C062D] flex justify-start items-center h-[70px] mx-0 px-4 text-white'>
+        <div className='bg-[#0C062D] flex justify-start shadow items-center h-[70px] mx-0 px-4 text-white'>
 
             <h1 className='text-3xl mr-[10vw] ml-[30px] font-[800] text-[#E3E31C]'>
                 Kan-Do
