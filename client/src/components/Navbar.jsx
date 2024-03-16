@@ -1,14 +1,21 @@
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "./Home";
+import { useContext, useState } from "react";
 
 const Navbar = () => {
 
+    const [hover, setHover] = useState(false)
     // navigation items
     const navItems = [
         { id: 1, text: 'Home', link: '/' },
         { id: 2, text: 'Projects', link: '/projects' },
         { id: 3, text: 'My Stats', link: '/mytasks' },
     ];
+
     const navigateTo = useNavigate();
+
+    const user = useContext(GlobalContext)
+    console.log(user);
 
     return (
         <div className='bg-[#0C062D] flex justify-start shadow items-center h-[70px] mx-0 px-4 text-white'>
@@ -28,6 +35,34 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
+
+            <div
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+                className="relative ml-auto mr-4 w-16 ">
+                <div
+                    className={`
+                rounded-[50%] overflow-hidden 
+                border-3 border-[#E3E31C]
+                cursor-pointer
+                `}
+                >
+                    <img src={`http://127.0.0.1:3000/${user.photo}`} alt="" />
+
+
+                </div>
+                <div
+                    className={`
+                absolute 
+                right-[0px] top-16  
+                w-[300px] h-36
+                bg-black
+                duration-100
+                ${hover ? '' : 'hidden'}
+                `}>
+
+                </div>
+            </div>
         </div>
     );
 };
