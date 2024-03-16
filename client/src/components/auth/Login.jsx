@@ -5,19 +5,18 @@ const Login = ({ login }) => {
 
     const [username, setUser] = useState('')
     const [password, setPassword] = useState('')
-  
+
     const img = 'https://images.hdqwalls.com/download/yellow-dark-minimal-abstract-5k-2i-1280x2120.jpg'
-  
+
     return (
         <>
-
             <div className='grid grid-cols-[1fr_2fr] '>
                 <div
-                className='h-screen opacity-90 shadow'
+                    className='h-screen opacity-90 shadow'
                     style={{
                         backgroundImage: `url(${img})`,
                         backgroundSize: 'cover'
-                        }}
+                    }}
                 >
                 </div>
 

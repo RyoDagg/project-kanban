@@ -9,9 +9,9 @@ const SignUp = ({ signUp }) => {
   const [image, setImage] = useState();
 
   const img = 'https://images.hdqwalls.com/download/yellow-dark-minimal-abstract-5k-2i-1280x2120.jpg'
-  
+
   return (
-    
+
     <>
       <div className='grid grid-cols-[1fr_2fr] '>
         <div
