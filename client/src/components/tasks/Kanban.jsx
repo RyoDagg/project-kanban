@@ -61,7 +61,7 @@ const Kanban = () => {
 
     return (
 
-        <div className="mx-5 my-5 border-4 p-5">
+        <div className="mx-3 my-5 border-1 shadow-lg rounded border-[#120844] p-3">
             <div className="grid grid-cols-3">
                 {kanbanSlots.map((slot) => <TaskSlot key={slot.id} addTask={addTask} fetchTasks={fetchTasks} handleDrop={handleDrop} {...slot} />)}
             </div>
