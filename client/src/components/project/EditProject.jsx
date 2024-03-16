@@ -43,7 +43,7 @@ const EditProject = () => {
     }).then(console.log).catch(console.log)
   }
   return (
-    <div className="w-full">
+    <div className="">
 
       <div className="flex justify-center">
         <div className="w-[400px] p-[20px] mt-[90px] rounded-md shadow-sm border-2">
