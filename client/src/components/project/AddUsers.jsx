@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useLocation } from "react-router-dom"
 
 const AddUsers = () => {
@@ -16,9 +16,15 @@ const AddUsers = () => {
         axios.post("http://localhost:3000/api/user/search",
             {
                 query
-            }).then(({ data }) => {
-                setUsers(data)
-            })
+            },
+            {
+                headers: {
+                    'x-token': localStorage.getItem('x-token')
+                }
+            }
+        ).then(({ data }) => {
+            setUsers(data)
+        })
             .catch((error) => {
                 console.log(error)
             })

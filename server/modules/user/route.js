@@ -16,13 +16,8 @@ router.get("/auth/signout", signOutList, userController.signout);
 router.get("/user/:id/projects", userController.userProjects);
 router.get("/user/:id/projectin", userController.userProjectsMemeber);
 
-router.post("/user/search", userController.search);
+router.post("/user/search", verifyToken, userController.search);
 
-router.get(
-  "/user/mydata",
-  verifySession,
-  verifyToken,
-  userController.myData
-);
+router.get("/user/mydata", verifySession, verifyToken, userController.myData);
 
 module.exports = router;

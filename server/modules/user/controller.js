@@ -87,12 +87,16 @@ const userProjectsMemeber = async (req, res) => {
 
 const search = async (req, res) => {
   try {
+    console.log(req.userId);
     const { query } = req.body;
     const users = await User.findAll({
       where: {
-        [Op.or]: {
-          email: { [Op.like]: `%${query}%` },
-          fullName: { [Op.like]: `%${query}%` },
+        [Op.and]: {
+          [Op.or]: {
+            email: { [Op.like]: `%${query}%` },
+            fullName: { [Op.like]: `%${query}%` },
+          },
+          id: { [Op.ne]: req.userId },
         },
       },
     });
