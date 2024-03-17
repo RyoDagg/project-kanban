@@ -41,10 +41,10 @@ const Navbar = () => {
                 className="relative ml-auto mr-4 w-16 ">
                 <div
                     className={`
-                rounded-[50%] overflow-hidden 
-                border-3 border-[#E3E31C]
-                cursor-pointer
-                `}
+                    rounded-[50%] overflow-hidden 
+                    border-3 border-[#E3E31C]
+                    cursor-pointer
+                    `}
                 >
                     <img src={`http://127.0.0.1:3000/${user.photo}`} alt="" />
 
@@ -52,13 +52,25 @@ const Navbar = () => {
                 </div>
                 <div
                     className={`
-                absolute 
-                -right-6 top-16  
-                w-[250px] h-36
-                bg-[#a0a0a0] rounded
-                duration-200
-                ${hover ? '' : 'opacity-0'}
+                        absolute transition-opacity 
+                        -right-4 top-16  
+                        w-[250px]
+                        border-1 shadow
+                        bg-[#f3f3f3] rounded
+                        duration-200
+                        text-[20px] font-[500] text-[#3D1CE3]
+                        ${hover ? '' : 'opacity-0 scale-0'}
                 `}>
+                    <div
+                        className='py-[15px] px-4 bg-[#fff] shadow-sm hover:bg-[#E3E31C] rounded-sm m-2 mx-3 cursor-pointer duration-300 hover:text-[#0C062D]'
+                    >
+                        👤 Edit Profile
+                    </div>
+                    <div
+                        className='py-[15px] px-4 bg-[#fff] shadow-sm hover:bg-[#E3E31C] rounded-sm m-2 mx-3 cursor-pointer duration-300 hover:text-[#0C062D]'
+                    >
+                        ↪ Logout
+                    </div>
 
                 </div>
             </div>
