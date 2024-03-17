@@ -12,9 +12,20 @@ const TaskCard = ({ task, fetchTasks }) => {
 
     return (
         <div
-            onDragStart={event => event.dataTransfer.setData("id", task.id)}
+            onDragStart={
+                event => {
+                    event.dataTransfer.setData("id", task.id)
+                    event.target.style.opacity = 0.7
+                }
+            }
+            onDragEnd={
+                event => {
+                    event.target.style.opacity = 1
+                }
+
+            }
             draggable
-            className="bg-white shadow rounded-md border-2 p-3 m-3 text-[16px] text-[#202020]">
+            className="bg-[#fff] hover:bg-[#f7f7f7] duration-100 cursor-pointer shadow rounded-md border-2 p-3 m-3 text-[16px] text-[#202020]">
             <h1 className="font-[500]">
                 {task.name}
             </h1>
