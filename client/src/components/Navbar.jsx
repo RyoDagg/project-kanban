@@ -8,8 +8,9 @@ const Navbar = () => {
     // navigation items
     const navItems = [
         { id: 1, text: 'Home', link: '/' },
-        { id: 2, text: 'Projects', link: '/projects' },
-        { id: 3, text: 'My Stats', link: '/mytasks' },
+        { id: 2, text: 'My Projects', link: '/my-projects' },
+        { id: 3, text: 'Collaborations', link: '/collaborations' },
+        { id: 4, text: 'My Stats', link: '/mystats' },
     ];
 
     const navigateTo = useNavigate();
@@ -66,6 +67,11 @@ const Navbar = () => {
                         text-[20px] font-[500] text-[#3D1CE3]
                         ${hover ? '' : 'opacity-0 scale-0'}
                 `}>
+                    <div
+                        className='py-[15px] px-4 text-[#0C062D] text-[22px] rounded-sm m-2 mx-3 cursor-pointer'
+                    >
+                        {user.fullName}
+                    </div>
                     <div
                         className='py-[15px] px-4 bg-[#fff] shadow-sm hover:bg-[#E3E31C] rounded-sm m-2 mx-3 cursor-pointer duration-300 hover:text-[#0C062D]'
                     >
