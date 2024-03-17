@@ -16,6 +16,11 @@ const Navbar = () => {
 
     const user = useContext(GlobalContext)
 
+    const logout = () => {
+        localStorage.removeItem('x-token')
+        window.location.reload(false);
+    }
+
     return (
         <div className='bg-[#0C062D] flex justify-start shadow items-center h-[70px] mx-0 px-4 text-white'>
 
@@ -67,6 +72,7 @@ const Navbar = () => {
                         👤 Edit Profile
                     </div>
                     <div
+                        onClick={logout}
                         className='py-[15px] px-4 bg-[#fff] shadow-sm hover:bg-[#E3E31C] rounded-sm m-2 mx-3 cursor-pointer duration-300 hover:text-[#0C062D]'
                     >
                         ↪ Logout
