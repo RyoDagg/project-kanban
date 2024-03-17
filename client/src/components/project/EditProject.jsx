@@ -46,7 +46,7 @@ const EditProject = () => {
     <div className="">
 
       <div className="flex justify-center">
-        <div className="w-[400px] p-[20px] mt-[90px] rounded-md shadow-sm border-2">
+        <div className="w-[600px] p-[20px] mt-[80px] rounded-md shadow border-2">
           <h1 className="text-center text-[25px] text-[#3D1CE3] font-[600]">
             Edit
           </h1>
@@ -70,6 +70,7 @@ const EditProject = () => {
               <label className='text-[#3116B6] text-[17px]'
                 htmlFor="">Description</label>
               <textarea
+                rows={5}
                 className="form-control"
                 type="text"
                 placeholder="description"
@@ -82,7 +83,6 @@ const EditProject = () => {
             </div >
             <div className="text-center my-2">
               <button className="btn btn-success"
-                type="button"
                 onClick={() => {
                   updated(name, desc);
                 }}

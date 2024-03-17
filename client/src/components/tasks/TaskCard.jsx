@@ -30,7 +30,7 @@ const TaskCard = ({ task, fetchTasks }) => {
                 {task.name}
             </h1>
             <p>{task.description}</p>
-            <button type="button" className="btn btn-outline-danger" onClick={() => { deleteTask(task.id) }} >❌</button>
+            <button className="btn btn-outline-danger" onClick={() => { deleteTask(task.id) }} >❌</button>
         </div>
     )
 }
