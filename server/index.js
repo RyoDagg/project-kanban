@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const fileupload = require("express-fileupload");
 
 const projectRouter = require("./modules/project/route.js");
 const taskRouter = require("./modules/task/route.js");
 const userRouter = require("./modules/user/route.js");
-const fileupload = require("express-fileupload");
 
 const PORT = 3000;
 
