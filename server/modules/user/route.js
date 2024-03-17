@@ -14,7 +14,7 @@ router.post("/auth/signup", userController.singnup);
 router.get("/auth/signout", signOutList, userController.signout);
 
 router.get("/user/:id/projects", userController.userProjects);
-router.get("/user/:id/projectsmemeber", userController.userProjectsMemeber);
+router.get("/user/:id/projectin", userController.userProjectsMemeber);
 
 router.post("/user/search", userController.search);
 

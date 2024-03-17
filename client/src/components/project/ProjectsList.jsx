@@ -31,7 +31,7 @@ const ProjectsList = () => {
         });
 
       axios
-        .get(`http://localhost:3000/api/user/${user.id}/projectsmemeber`)
+        .get(`http://localhost:3000/api/user/${user.id}/projectin`)
         .then((response) => {
           setProjectsMember(response.data);
         })
