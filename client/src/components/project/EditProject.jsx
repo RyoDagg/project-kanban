@@ -8,8 +8,6 @@ const EditProject = () => {
   const navigateTo = useNavigate();
   const [name, setName] = useState(project.name);
   const [desc, setDesc] = useState(project.description);
-  const [query, setQuery] = useState('')
-  const [users, setUsers] = useState([])
 
   const updated = (name, description) => {
     axios
@@ -24,24 +22,7 @@ const EditProject = () => {
         console.log(error);
       });
   };
-  const search = (query) => {
 
-    axios.post("http://localhost:3000/api/user/search",
-      {
-        query
-      }).then(({ data }) => {
-        setUsers(data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }
-  const addUser = (userId) => {
-    axios.post("http://localhost:3000/api/project/addUser", {
-      userId,
-      projectId: project.id
-    }).then(console.log).catch(console.log)
-  }
   return (
     <div className="">
 
@@ -90,11 +71,6 @@ const EditProject = () => {
                 Edit
               </button>
             </div>
-            <input type="text" onChange={(event) => { setQuery(event.target.value) }} />
-            <button onClick={() => { search(query) }}>Search</button>
-            <ul>
-              {users.map(user => <li key={user.id}>{user.fullName} <button onClick={() => addUser(user.id)}>Add</button></li>)}
-            </ul>
           </div>
         </div>
       </div>
