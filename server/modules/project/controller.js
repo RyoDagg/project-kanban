@@ -1,6 +1,7 @@
 const express = require("express");
 const Project = require("./model");
 const Task = require("../task/model");
+const User = require("../user/model");
 
 const getAll = async (req, res) => {
   try {
@@ -69,7 +70,7 @@ const addUser = async (req, res) => {
     const { userId, projectId } = req.body;
     const project = await Project.findByPk(projectId);
     project.addUser(userId);
-    res.send("mrigl");
+    res.send('User Added');
   } catch (error) {
     res.send(404);
   }

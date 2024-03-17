@@ -1,15 +1,10 @@
 import axios from "axios"
 import { useState } from "react"
-import { useLocation } from "react-router-dom"
 
-const AddUsers = () => {
-
+const AddUsers = ({ addUser }) => {
 
     const [query, setQuery] = useState('')
     const [users, setUsers] = useState([])
-
-    const { state } = useLocation();
-    const { project } = state;
 
     const search = (query) => {
 
@@ -28,12 +23,6 @@ const AddUsers = () => {
             .catch((error) => {
                 console.log(error)
             })
-    }
-    const addUser = (userId) => {
-        axios.post("http://localhost:3000/api/project/addUser", {
-            userId,
-            projectId: project.id
-        }).then(() => search(query)).catch(console.log)
     }
 
     return (
