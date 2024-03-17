@@ -11,7 +11,7 @@ const SideBar = () => {
             link: "/project/edit"
         },
         {
-            title: 'users',
+            title: 'Users',
             link: "/project/users"
         }
     ]

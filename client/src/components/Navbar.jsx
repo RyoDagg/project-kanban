@@ -8,9 +8,10 @@ const Navbar = () => {
     // navigation items
     const navItems = [
         { id: 1, text: 'Home', link: '/' },
-        { id: 2, text: 'My Projects', link: '/my-projects' },
-        { id: 3, text: 'Collaborations', link: '/collaborations' },
-        { id: 4, text: 'My Stats', link: '/mystats' },
+        // the rest are for presentation purposes
+        { id: 2, text: 'My Projects', link: '/' },
+        { id: 3, text: 'Collaborations', link: '/' },
+        { id: 4, text: 'My Stats', link: '/' },
     ];
 
     const navigateTo = useNavigate();
