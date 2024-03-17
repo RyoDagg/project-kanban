@@ -6,12 +6,12 @@ const ProjectCard = ({ setProject, project }) => {
 
     return (
         <div
-            className="m-[10px] rounded shadow-sm border-1 border-[#9F9F14] divide-y-2 cursor-pointer duration-200"
+            className="m-[10px] rounded shadow-sm border-3 border-[#9F9F14] divide-y-2 cursor-pointer"
         >
             <div
-                className="p-4 hover:bg-slate-200"
+                className="p-4 hover:bg-slate-200 duration-200"
                 onClick={() => {
-                    navigateTo("/project", { state: { project} });
+                    navigateTo("/project", { state: { project } });
                 }}
             >
                 <div
@@ -32,17 +32,18 @@ const ProjectCard = ({ setProject, project }) => {
 
             <div className="p-2 text-right">
 
-                <button className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DELETE"
+                <button className="btn btn-outline-danger px-3 py-0 border-3 mx-2 shadow-md text-[25px]" data-bs-toggle="modal" data-bs-target="#DELETE"
                     onClick={() => {
                         setProject(project)
                     }}
-                >🍄
+                >❌
                 </button>
-                <button className="btn btn-success" data-bs-toggle="modal" 
-                  onClick={() => {
-                    navigateTo("/project/edit", { state: { project} });
-                }}
-                >🔧
+                <button className="btn btn-outline-success px-3 py-0 border-3 mx-2 shadow-md text-[25px]" data-bs-toggle="modal"
+                    onClick={() => {
+                        navigateTo("/project/edit", { state: { project } });
+                    }}
+                >
+                    ⚙️
                 </button>
             </div>
         </div >
