@@ -89,19 +89,27 @@ const ProjectsList = () => {
           </button >
         </div>
         <div className="">
-          <div className="grid border-1 rounded border-[#120844] gap-4 grid-cols-3 p-3 flex-wrap">
-            {projects.map((project, key) => {
-              return (
-                <ProjectCard key={key} project={project} setProject={setProject} />
-              );
-            })}
+          <div className="border-1 rounded border-[#120844]">
+            <div className="text-[30px] p-3 pb-0 font-[500]">My Projects</div>
+            <div className="grid gap-4 grid-cols-3 p-3 flex-wrap">
+              {projects.map((project, key) => {
+                return (
+                  <ProjectCard key={key} project={project} setProject={setProject} />
+                );
+              })}
+
+            </div>
           </div>
-          <div className="grid gap-4 grid-cols-3 flex-wrap">
-            {projectsMember.map((project, key) => {
-              return (
-                <ProjectCard key={key} project={project} setProject={setProject} />
-              );
-            })}
+          <div className="border-1 rounded border-[#120844]">
+            <div className="text-[30px] text-[#120844] p-3 pb-0 font-[500]">Collaborations</div>
+            <div className="grid gap-4 grid-cols-3 p-3 flex-wrap">
+              {projectsMember.map((project, key) => {
+                return (
+                  <ProjectCard key={key} project={project} setProject={setProject} />
+                );
+              })}
+
+            </div>
           </div>
         </div>
       </div>
