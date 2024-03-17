@@ -21,12 +21,12 @@ const TaskSlot = ({ data, title, handleDrop, role, addTask,fetchTasks,  }) => {
                 event.preventDefault()
             }}
         >
-            <h1 className="text-[25px] bg-[#E9E949] py-3 shadow rounded px-6 text-[#1F0E71] font-bold">
+            <h1 className="text-[28px] tracking-[7px] bg-[#E9E949] py-3 shadow rounded px-6 text-[#1F0E71] font-[700]">
                 {title}
             </h1>
 
             <div
-                className={`${dragOver ? "bg-[#d0d0d0]" : "bg-[#efefef]"} overflow-y-scroll pb-3 rounded min-h-[250px] max-h-[500px]`}
+                className={`${dragOver ? "bg-[#e0e0e0]" : "bg-[#efefef]"} duration-100 overflow-y-scroll pb-3 rounded min-h-[250px] max-h-[500px]`}
             >
                 {data.map((task, i) => (
                     <TaskCard key={i} task={task} fetchTasks={fetchTasks} />
