@@ -7,7 +7,7 @@ Our Project Manager Website is designed to streamline your workflow and empower 
 
 ## Setup
 
-I have created files & commands to generate (synchronize and populate/seed the database).
+We have created files & commands to generate (synchronize and populate/seed the database).
 
 1. create database under the name **kanban** or change the database name in **server\config**.
 2. Access **/server**.
